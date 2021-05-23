@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crono</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=KoHo:wght@200;300;700&display=swap" rel="stylesheet"> 
+</head>
+<body class="blackgreen">
+    <section>
+        <p id="titleSize" class="textCenter mb10">Crono.js</p>
+        <p class="bigSize textCenter mt10">The lightweight time delay manager for websites!</p>
+    </section>
+    <section>
+        <p class="normalSize textCenter mt10">Crono.js is a lightweight (1kb minified) Javascript Framework for managing delays on loops and input for websites, web applications, games animations and more. Here are some examples: </p>
+    </section>
+    <section>
+        <p class="bigSize green pl15">Example 1: Delay while click a button.</p>
+        <p class="normalSize textCenter mt10">When you will click this button, you will change the text for a short amount of time. <button class="delayButton lightgreen" id="ouch" onclick="ouchAnimation();">Click Me!</button></p>
+        <p class="normalSize green pl15 consolasText">example1 = new Crono(returnNormal, 1000, 1);</p>
+        <p class="normalSize textCenter mt10">When you call Crono, the first parameter is the callback function, the second is the delay time in milliseconds and the third is the property. By putting 1 we run this function once.</p>
+    </section>
+    <section>
+        <p class="bigSize green pl15">Example 2: Check Delay when clicking or pressing a button.</p>
+        <p class="normalSize textCenter mt10">This function returns true or false based on the time passed and the delay parameter. Try this button now. <button class="delayButton lightgreen" id="clickButton" onclick="clickCounter()">Button times pressed every 3 seconds: 0</button></p>
+        <p class="normalSize green pl15 consolasText">example2 = new Crono(clickCounter, 3000, "clickCounter");</p>
+        <p class="normalSize textCenter mt10">If the property parameter is a string (it can be anything except Crono and JavaScript keywords) then Crono check only if the time is passed or not, so you can control better the input delay, useful mainly for games. This, for example, is the function used for the button:</p>
+        <div class="green">
+            <p class="normalSize green pl15 consolasText nomargin">example2 = new Crono(clickCounter, 3000, "clickCounter");</p>
+            </br>
+            <p class="normalSize green pl15 consolasText nomargin">let clickTimes = 0;</p>
+            </br>
+            <p class="normalSize green pl15 consolasText nomargin">function clickCounter() {</p>
+            <p class="normalSize green pl15 consolasText nomargin">if(example2.checkDelay() == true) {</p>
+            <p class="normalSize green pl15 consolasText nomargin"> clickTimes++;</p>
+            <p class="normalSize green pl15 consolasText nomargin">let clickButton = document.querySelector("#clickButton");</p>
+            <p class="normalSize green pl15 consolasText nomargin">clickButton.innerHTML = "Button times pressed every 3 seconds: " + clickTimes;</p>
+            <p class="normalSize green pl15 consolasText nomargin"> }</p>
+            <p class="normalSize green pl15 consolasText nomargin">}</p>
+        </div>
+        <p class="normalSize textCenter mt10">So if the 3000 milliseconds didn't pass since the first time you pressed the button, you can't call the function unless the delay time is passed.</p>
+    </section>
+    <section>
+        <p class="bigSize green pl15">Example 3: Simulating a clock by passing a function in a infinite loop.</p>
+        <p class="normalSize textCenter mt10">You can make a function and use Crono for putting it in a endless loop. This, for example, is a basic clock created with Crono and the function code: <button class="delayButton lightgreen" id="clockButton">Seconds you passed on this website page: 0</button></p>
+        <p class="normalSize green pl15 consolasText">example3 = new Crono(clockSimulation, 1000, 0);</p>
+        <p class="normalSize textCenter mt10">If you put a 0 in the property, then the loop will be infinite. Currently there is no option for negative property, so it's not recommended to do it.</p>
+    </section>
+    <section>
+        <p class="bigSize green pl15">Example 4: Check Delay with more conditions.</p>
+        <p class="normalSize textCenter mt10">You can use the <span class="green consolasText">your_variable.checkDelay()</span> with more conditions. I simulated some magic casting in a button, try it! <button class="delayButton lightgreen" id="magicButton" onclick="castMagic()">Magic left you can use per two seconds: 0</button></p>
+        <p class="normalSize green pl15 consolasText">example4 = new Crono(castMagic, 2000, "castMagic");</p>
+        <p class="normalSize textCenter mt10">So if you have magic points AND two seconds passed, you can use the magic. Here is the function I used:</p>
+        <div class="green">
+            <p class="normalSize green pl15 consolasText nomargin">example4 = new Crono(castMagic, 2000, "castMagic");</p>
+            </br>
+            <p class="normalSize green pl15 consolasText nomargin">let magicPoints = 10;</p>
+            <p class="normalSize green pl15 consolasText nomargin">let magicButton = document.querySelector("#magicButton");</p>
+            <p class="normalSize green pl15 consolasText nomargin">magicButton.innerHTML = "Magic left you can use per two seconds: " + magicPoints;</p>
+            </br>
+            <p class="normalSize green pl15 consolasText nomargin">function castMagic() {</p>
+            <p class="normalSize green pl15 consolasText nomargin">if(magicPoints > 0 && example4.checkDelay() == true) {</p>
+            <p class="normalSize green pl15 consolasText nomargin">magicPoints--;</p>
+            <p class="normalSize green pl15 consolasText nomargin">magicButton.innerHTML = "Magic left you can use per two seconds: " + magicPoints;</p>
+            <p class="normalSize green pl15 consolasText nomargin">} else if(magicPoints <= 0) {</p>
+            <p class="normalSize green pl15 consolasText nomargin">alert("Sorry, you used all the magic :(");</p>
+            <p class="normalSize green pl15 consolasText nomargin">let magicButton = document.querySelector("#magicButton");</p>
+            <p class="normalSize green pl15 consolasText nomargin">magicButton.innerHTML = "There is no more magic left :( ";</p>
+            <p class="normalSize green pl15 consolasText nomargin">}</p>
+            <p class="normalSize green pl15 consolasText nomargin">}</p>
+        </div>
+        <p class="normalSize textCenter mt10">But what if I want to call a function immediately when call a function? Let's see this in the Example 5 below.</p>
+    </section>
+    <section>
+        <p class="bigSize green pl15">Example 5: Simulating a clock by passing a function called immediately in a infinite loop.</p>
+        <p class="normalSize textCenter mt10">If you need to call the function as soon as possible before the loop, you can, if it's finite or infinite: <button class="delayButton lightgreen" id="clockButton2">Seconds you passed on this website page +1: 0</button></p>
+        <p class="normalSize green pl15 consolasText">example5 = new Crono(clockSimulation2, 1000, 0, true);</p>
+        <p class="normalSize textCenter mt10">The fourth parameter is optional and called "isFirstLoop". If it's true, the function is called first, otherwise you will run the loop as always.</p>
+    </section>
+    <section>
+        <p class="bigSize green pl15">Example 6: Pause and Resume one or more animations</p>
+        <p class="normalSize textCenter mt10">If you want to make a pause button, then you can pause at resume at will your loops. You need the <span class="green consolasText">pause()</span> method for doing that. 
+            Try a really basic fight by pressing the button and use the pause for testing it: <button class="delayButton lightgreen" id="swordGame" onclick="simulateDamage();">Hit Points Left: 100/100</button><button class="delayButton lightgreen" id="pauseGame" onclick="pauseGame();">Pause Game</button></p>
+        <p class="normalSize green pl15 consolasText">your_variable.pause();</p>
+        <p class="normalSize textCenter mt10">On that case, you can pause some or all loops when you want. Here is the functions used for this example:</p>
+        <div class="green">
+            <p class="normalSize green pl15 consolasText nomargin">let hitPoints = 100;</p>
+            <p class="normalSize green pl15 consolasText nomargin">let hitPointsMax = 100;</p>
+            <p class="normalSize green pl15 consolasText nomargin">let regenerationPoints = 5;</p>
+            <p class="normalSize green pl15 consolasText nomargin">let swordDamage = 30;   
+            <p class="normalSize green pl15 consolasText nomargin">let regenerationDelay = 1000;</p>
+            <p class="normalSize green pl15 consolasText nomargin">let swordDelay = 3000;</p>
+            <p class="normalSize green pl15 consolasText nomargin">let isAlive = true;</p>
+            <p class="normalSize green pl15 consolasText nomargin">let example6_regeneration = new Crono(regenerationSpell, regenerationDelay, 0);</p>
+            <p class="normalSize green pl15 consolasText nomargin">let example6_damage = new Crono(simulateDamage, swordDelay, "swordAttack");</p>
+            <p class="normalSize green pl15 consolasText nomargin">let example6_button = document.querySelector("#swordGame");</p>
+            </br>
+            <p class="normalSize green pl15 consolasText nomargin">function regenerationSpell() {</p>
+            <p class="normalSize green pl15 consolasText nomargin">if(hitPoints < hitPointsMax || isAlive == true) {</p>
+            <p class="normalSize green pl15 consolasText nomargin">hitPoints += regenerationPoints;</p>
+            <p class="normalSize green pl15 consolasText nomargin">}</p>
+            <p class="normalSize green pl15 consolasText nomargin">if(hitPoints > hitPointsMax) {</p>
+            <p class="normalSize green pl15 consolasText nomargin">hitPoints = hitPointsMax;</p>
+            <p class="normalSize green pl15 consolasText nomargin">}</p>
+            <p class="normalSize green pl15 consolasText nomargin">example6_button.innerHTML = "Hit Points Left: " + hitPoints + " / " + hitPointsMax;</p>
+            <p class="normalSize green pl15 consolasText nomargin">}</p>
+            </br>
+            <p class="normalSize green pl15 consolasText nomargin"> function simulateDamage() {</p>
+            <p class="normalSize green pl15 consolasText nomargin">if(example6_damage.checkDelay() == true && isAlive == true) {</p>
+            <p class="normalSize green pl15 consolasText nomargin">hitPoints -= swordDamage;</p>
+            <p class="normalSize green pl15 consolasText nomargin">if(hitPoints <= 0) {</p>
+            <p class="normalSize green pl15 consolasText nomargin">hitPoints = 0;</p>
+            <p class="normalSize green pl15 consolasText nomargin">}</p>
+            <p class="normalSize green pl15 consolasText nomargin">isAlive = false;</p>
+            <p class="normalSize green pl15 consolasText nomargin">alert("Game Over! Refresh the page to play again!");</p>
+            <p class="normalSize green pl15 consolasText nomargin">}</p>
+            <p class="normalSize green pl15 consolasText nomargin">example6_button.innerHTML = "Hit Points Left: " + hitPoints + " / " + hitPointsMax;</p>
+            <p class="normalSize green pl15 consolasText nomargin">}</p>
+            <p class="normalSize green pl15 consolasText nomargin">}</p>
+            </br>
+            <p class="normalSize green pl15 consolasText nomargin">function pauseGame() {</p>
+            <p class="normalSize green pl15 consolasText nomargin">example6_damage.pause();</p>
+            <p class="normalSize green pl15 consolasText nomargin">example6_regeneration.pause();</p>
+            <p class="normalSize green pl15 consolasText nomargin">}</p>
+        </div>
+        <p class="normalSize textCenter mt10">Now, let's talk more about the finite loops.</p>
+    </section>
+    <section>
+        <p class="bigSize green pl15">Example 7: Restart a Finite loop.</p>
+        <p class="normalSize textCenter mt10"> A finite loop is the loop with an effective end. checkDelay() can be not used, the infinite loop can be stopped by using pause, but what about the finite loop? Press the button to restart the loop: <button class="delayButton lightgreen" id="countButton" onclick="restartCounting();">Let's Count!</button></p>
+        <p class="normalSize green pl15 consolasText">example7.restart();</p>
+        <p class="normalSize textCenter mt10">It takes only this. Now, as a final step, let's pause a loop before calling it.</p>
+    </section>
+    <section>
+        <p class="bigSize green pl15">Example 8: Pause a loop before executing it.</p>
+        <p class="normalSize textCenter mt10"> A finite loop is the loop with an effective end. checkDelay() can be not used, the infinite loop can be stopped by using pause, but what about the finite loop? Press the button to restart the loop: <button class="delayButton lightgreen" id="moneyButton" onclick="pauseLoop();">The loop is paused. Click to resume</button></p>
+        <p class="normalSize green pl15 consolasText">example8 = new Crono(moneyCollected, 500, 0, true, true);</p>
+        <p class="normalSize textCenter mt10">The last parameter set if you pause the loop before executing or not.</p>
+    </section>
+
+<script src="crono.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

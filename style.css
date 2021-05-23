@@ -1,0 +1,83 @@
+body
+{
+    font-family: 'KoHo', sans-serif;
+    color: #d5ddde;
+    margin: 0 10%;
+}
+
+.delayButton
+{
+    font-family: 'KoHo', sans-serif;
+    padding: 10px;
+    color: #d5ddde;
+}
+
+.blackgreen
+{
+    background-color: #1b2726;
+}
+
+.green
+{
+    background-color: #3c5148;
+}
+
+.lightgreen
+{
+    background-color: #6b8e4e;
+}
+
+.grey
+{
+    background-color: #b2c5b3;
+}
+
+.white
+{
+    background-color: #d5ddde;
+}
+
+.mb10
+{
+    margin-bottom: 10px;
+}
+
+.mt10
+{
+    margin-top: 10px;
+}
+
+#titleSize
+{
+    font-size: 70px;
+}
+
+.bigSize
+{
+    font-size: 40px;
+}
+
+.normalSize
+{
+    font-size: 20px;
+}
+
+.textCenter
+{
+    text-align: center;
+}
+
+.pl15
+{
+    padding-left: 15px;
+}
+
+.consolasText
+{
+    font-family: Monaco,Consolas,monospace;
+}
+
+.nomargin
+{
+    margin: 0;
+}
