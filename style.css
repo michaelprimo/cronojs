@@ -80,4 +80,5 @@ body
 .nomargin
 {
     margin: 0;
+    word-wrap: break-word;
 }
