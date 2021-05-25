@@ -17,7 +17,7 @@
         
     </section>
     <section>
-        <p class="normalSize textCenter mt10">Crono.js is a lightweight (1kb minified) Javascript Framework for managing delays on loops and input for websites, web applications, games animations and more. Here are some examples: </p>
+        <p class="normalSize textCenter mt10">Crono.js is a lightweight (938 bytes minified) Javascript Framework for managing delays on loops and input for websites, web applications, games animations and more. Here are some examples: </p>
     </section>
     <section>
         <p class="bigSize green pl15 pb5 pt5">Example 1: Delay while click a button.</p>
@@ -55,24 +55,26 @@
         <p class="normalSize textCenter mt10">You can use the <span class="green consolasText">your_variable.checkDelay()</span> with more conditions. I simulated some magic casting in a button, try it! <button class="delayButton lightgreen" id="magicButton" onclick="castMagic()">Magic left you can use per two seconds: 0</button></p>
         <p class="normalSize green pl15 pb5 pt5 consolasText">example4 = new Crono(castMagic, 2000, "castMagic");</p>
         <p class="normalSize textCenter mt10">So if you have magic points AND two seconds passed, you can use the magic. Here is the function I used:</p>
-        <div class="green">
-            <p class="normalSize green pl15 consolasText nomargin">example4 = new Crono(castMagic, 2000, "castMagic");</p>
-            </br>
-            <p class="normalSize green pl15 consolasText nomargin">let magicPoints = 10;</p>
-            <p class="normalSize green pl15 consolasText nomargin">let magicButton = document.querySelector("#magicButton");</p>
-            <p class="normalSize green pl15 consolasText nomargin">magicButton.innerHTML = "Magic left you can use per two seconds: " + magicPoints;</p>
-            </br>
-            <p class="normalSize green pl15 consolasText nomargin">function castMagic() {</p>
-            <p class="normalSize green pl15 consolasText nomargin">if(magicPoints > 0 && example4.checkDelay() == true) {</p>
-            <p class="normalSize green pl15 consolasText nomargin">magicPoints--;</p>
-            <p class="normalSize green pl15 consolasText nomargin">magicButton.innerHTML = "Magic left you can use per two seconds: " + magicPoints;</p>
-            <p class="normalSize green pl15 consolasText nomargin">} else if(magicPoints <= 0) {</p>
-            <p class="normalSize green pl15 consolasText nomargin">alert("Sorry, you used all the magic :(");</p>
-            <p class="normalSize green pl15 consolasText nomargin">let magicButton = document.querySelector("#magicButton");</p>
-            <p class="normalSize green pl15 consolasText nomargin">magicButton.innerHTML = "There is no more magic left :( ";</p>
-            <p class="normalSize green pl15 consolasText nomargin">}</p>
-            <p class="normalSize green pl15 consolasText nomargin">}</p>
-        </div>
+        <div style="background: #202020; overflow:auto;width:auto;background:#3c5148;color:#d5ddde;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">example4</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">Crono(castMagic,</span> <span style="color: #3677a9">2000</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&quot;castMagic&quot;</span><span style="color: #d0d0d0">);</span>
+        <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">magicPoints</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">10</span><span style="color: #d0d0d0">;</span>
+        <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">magicButton</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">document</span><span style="color: #d0d0d0">.querySelector(</span><span style="color: #ed9d13">&quot;#magicButton&quot;</span><span style="color: #d0d0d0">);</span>
+        <span style="color: #d0d0d0">magicButton.innerHTML</span> <span style="color: #d0d0d0">=</span> <span style="color: #ed9d13">&quot;Magic left you can use per two seconds: &quot;</span> <span style="color: #d0d0d0">+</span> <span style="color: #d0d0d0">magicPoints;</span>
+        <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">castMagic()</span>
+        <span style="color: #d0d0d0">{</span>
+        <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(magicPoints</span> <span style="color: #d0d0d0">&gt;</span> <span style="color: #3677a9">0</span> <span style="color: #d0d0d0">&amp;&amp;</span> <span style="color: #d0d0d0">example4.checkDelay()</span> <span style="color: #d0d0d0">==</span> <span style="color: #6ab825; font-weight: bold">true</span><span style="color: #d0d0d0">)</span>
+        <span style="color: #d0d0d0">{</span>
+            <span style="color: #d0d0d0">magicPoints--;</span>
+            
+            <span style="color: #d0d0d0">magicButton.innerHTML</span> <span style="color: #d0d0d0">=</span> <span style="color: #ed9d13">&quot;Magic left you can use per two seconds: &quot;</span> <span style="color: #d0d0d0">+</span> <span style="color: #d0d0d0">magicPoints;</span>
+        <span style="color: #d0d0d0">}</span>
+        <span style="color: #6ab825; font-weight: bold">else</span> <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(magicPoints</span> <span style="color: #d0d0d0">&lt;=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">)</span>
+        <span style="color: #d0d0d0">{</span>
+            <span style="color: #d0d0d0">alert(</span><span style="color: #ed9d13">&quot;Sorry, you used all the magic :(&quot;</span><span style="color: #d0d0d0">);</span>
+            <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">magicButton</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">document</span><span style="color: #d0d0d0">.querySelector(</span><span style="color: #ed9d13">&quot;#magicButton&quot;</span><span style="color: #d0d0d0">);</span>
+            <span style="color: #d0d0d0">magicButton.innerHTML</span> <span style="color: #d0d0d0">=</span> <span style="color: #ed9d13">&quot;There is no more magic left :( &quot;</span><span style="color: #d0d0d0">;</span>
+        <span style="color: #d0d0d0">}</span>
+        <span style="color: #d0d0d0">}</span></pre></div>
+
         <p class="normalSize textCenter mt10">But what if I want to call a function immediately when call a function? Let's see this in the Example 5 below.</p>
     </section>
     <section>
@@ -87,46 +89,51 @@
             Try a really basic fight by pressing the button and use the pause for testing it: <button class="delayButton lightgreen" id="swordGame" onclick="simulateDamage();">Hit Points Left: 100/100</button><button class="delayButton lightgreen" id="pauseGame" onclick="pauseGame();">Pause Game</button></p>
         <p class="normalSize green pl15 pb5 pt5 consolasText">your_variable.pause();</p>
         <p class="normalSize textCenter mt10">On that case, you can pause some or all loops when you want. Here is the functions used for this example:</p>
-        <div class="green">
-            <p class="normalSize green pl15 consolasText nomargin">let hitPoints = 100;</p>
-            <p class="normalSize green pl15 consolasText nomargin">let hitPointsMax = 100;</p>
-            <p class="normalSize green pl15 consolasText nomargin">let regenerationPoints = 5;</p>
-            <p class="normalSize green pl15 consolasText nomargin">let swordDamage = 30;   
-            <p class="normalSize green pl15 consolasText nomargin">let regenerationDelay = 1000;</p>
-            <p class="normalSize green pl15 consolasText nomargin">let swordDelay = 3000;</p>
-            <p class="normalSize green pl15 consolasText nomargin">let isAlive = true;</p>
-            <p class="normalSize green pl15 consolasText nomargin">let example6_regeneration = new Crono(regenerationSpell, regenerationDelay, 0);</p>
-            <p class="normalSize green pl15 consolasText nomargin">let example6_damage = new Crono(simulateDamage, swordDelay, "swordAttack");</p>
-            <p class="normalSize green pl15 consolasText nomargin">let example6_button = document.querySelector("#swordGame");</p>
-            </br>
-            <p class="normalSize green pl15 consolasText nomargin">function regenerationSpell() {</p>
-            <p class="normalSize green pl15 consolasText nomargin">if(hitPoints < hitPointsMax || isAlive == true) {</p>
-            <p class="normalSize green pl15 consolasText nomargin">hitPoints += regenerationPoints;</p>
-            <p class="normalSize green pl15 consolasText nomargin">}</p>
-            <p class="normalSize green pl15 consolasText nomargin">if(hitPoints > hitPointsMax) {</p>
-            <p class="normalSize green pl15 consolasText nomargin">hitPoints = hitPointsMax;</p>
-            <p class="normalSize green pl15 consolasText nomargin">}</p>
-            <p class="normalSize green pl15 consolasText nomargin">example6_button.innerHTML = "Hit Points Left: " + hitPoints + " / " + hitPointsMax;</p>
-            <p class="normalSize green pl15 consolasText nomargin">}</p>
-            </br>
-            <p class="normalSize green pl15 consolasText nomargin"> function simulateDamage() {</p>
-            <p class="normalSize green pl15 consolasText nomargin">if(example6_damage.checkDelay() == true && isAlive == true) {</p>
-            <p class="normalSize green pl15 consolasText nomargin">hitPoints -= swordDamage;</p>
-            <p class="normalSize green pl15 consolasText nomargin">if(hitPoints <= 0) {</p>
-            <p class="normalSize green pl15 consolasText nomargin">hitPoints = 0;</p>
-            <p class="normalSize green pl15 consolasText nomargin">}</p>
-            <p class="normalSize green pl15 consolasText nomargin">isAlive = false;</p>
-            <p class="normalSize green pl15 consolasText nomargin">alert("Game Over! Refresh the page to play again!");</p>
-            <p class="normalSize green pl15 consolasText nomargin">}</p>
-            <p class="normalSize green pl15 consolasText nomargin">example6_button.innerHTML = "Hit Points Left: " + hitPoints + " / " + hitPointsMax;</p>
-            <p class="normalSize green pl15 consolasText nomargin">}</p>
-            <p class="normalSize green pl15 consolasText nomargin">}</p>
-            </br>
-            <p class="normalSize green pl15 consolasText nomargin">function pauseGame() {</p>
-            <p class="normalSize green pl15 consolasText nomargin">example6_damage.pause();</p>
-            <p class="normalSize green pl15 consolasText nomargin">example6_regeneration.pause();</p>
-            <p class="normalSize green pl15 consolasText nomargin">}</p>
-        </div>
+        <div style="background: #202020; overflow:auto;width:auto;background:#3c5148;color:#d5ddde;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">hitPoints</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">100</span><span style="color: #d0d0d0">;</span>
+        <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">hitPointsMax</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">100</span><span style="color: #d0d0d0">;</span>
+        <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">regenerationPoints</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">5</span><span style="color: #d0d0d0">;</span>
+        <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">swordDamage</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">30</span><span style="color: #d0d0d0">;</span>
+        <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">regenerationDelay</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">1000</span><span style="color: #d0d0d0">;</span>
+        <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">swordDelay</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">3000</span><span style="color: #d0d0d0">;</span>
+        <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">isAlive</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">true</span><span style="color: #d0d0d0">;</span>
+        <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">example6_regeneration</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">Crono(regenerationSpell,</span> <span style="color: #d0d0d0">regenerationDelay,</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">);</span>
+        <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">example6_damage</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">Crono(simulateDamage,</span> <span style="color: #d0d0d0">swordDelay,</span> <span style="color: #ed9d13">&quot;swordAttack&quot;</span><span style="color: #d0d0d0">);</span>
+        <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">example6_button</span> <span style="color: #d0d0d0">=</span> <span style="color: #24909d">document</span><span style="color: #d0d0d0">.querySelector(</span><span style="color: #ed9d13">&quot;#swordGame&quot;</span><span style="color: #d0d0d0">);</span>
+
+        <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">regenerationSpell()</span>
+        <span style="color: #d0d0d0">{</span>
+        <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(hitPoints</span> <span style="color: #d0d0d0">&lt;</span> <span style="color: #d0d0d0">hitPointsMax</span> <span style="color: #d0d0d0">&amp;&amp;</span> <span style="color: #d0d0d0">isAlive</span> <span style="color: #d0d0d0">==</span> <span style="color: #6ab825; font-weight: bold">true</span><span style="color: #d0d0d0">)</span>
+        <span style="color: #d0d0d0">{</span>
+            <span style="color: #d0d0d0">hitPoints</span> <span style="color: #d0d0d0">+=</span> <span style="color: #d0d0d0">regenerationPoints;</span>
+            <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(hitPoints</span> <span style="color: #d0d0d0">&gt;</span> <span style="color: #d0d0d0">hitPointsMax)</span>
+            <span style="color: #d0d0d0">{</span>
+            <span style="color: #d0d0d0">hitPoints</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">hitPointsMax;</span>
+            <span style="color: #d0d0d0">}</span>
+        <span style="color: #d0d0d0">}</span>
+        <span style="color: #d0d0d0">example6_button.innerHTML</span> <span style="color: #d0d0d0">=</span> <span style="color: #ed9d13">&quot;Hit Points Left: &quot;</span> <span style="color: #d0d0d0">+</span> <span style="color: #d0d0d0">hitPoints</span> <span style="color: #d0d0d0">+</span> <span style="color: #ed9d13">&quot; / &quot;</span> <span style="color: #d0d0d0">+</span> <span style="color: #d0d0d0">hitPointsMax;</span>
+        <span style="color: #d0d0d0">}</span>
+
+        <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">simulateDamage()</span>
+        <span style="color: #d0d0d0">{</span>
+        <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(example6_damage.checkDelay()</span> <span style="color: #d0d0d0">==</span> <span style="color: #6ab825; font-weight: bold">true</span> <span style="color: #d0d0d0">&amp;&amp;</span> <span style="color: #d0d0d0">isAlive</span> <span style="color: #d0d0d0">==</span> <span style="color: #6ab825; font-weight: bold">true</span><span style="color: #d0d0d0">)</span>
+        <span style="color: #d0d0d0">{</span>
+            <span style="color: #d0d0d0">hitPoints</span> <span style="color: #d0d0d0">-=</span> <span style="color: #d0d0d0">swordDamage;</span>
+            <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(hitPoints</span> <span style="color: #d0d0d0">&lt;=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">)</span>
+            <span style="color: #d0d0d0">{</span>
+            <span style="color: #d0d0d0">hitPoints</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0</span><span style="color: #d0d0d0">;</span>
+            <span style="color: #d0d0d0">isAlive</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">false</span><span style="color: #d0d0d0">;</span>
+            <span style="color: #d0d0d0">alert(</span><span style="color: #ed9d13">&quot;Game Over! Refresh the page to play again!&quot;</span><span style="color: #d0d0d0">);</span>
+            <span style="color: #d0d0d0">}</span>
+            <span style="color: #d0d0d0">example6_button.innerHTML</span> <span style="color: #d0d0d0">=</span> <span style="color: #ed9d13">&quot;Hit Points Left: &quot;</span> <span style="color: #d0d0d0">+</span> <span style="color: #d0d0d0">hitPoints</span> <span style="color: #d0d0d0">+</span> <span style="color: #ed9d13">&quot; / &quot;</span> <span style="color: #d0d0d0">+</span> <span style="color: #d0d0d0">hitPointsMax;</span>
+        <span style="color: #d0d0d0">}</span>
+        <span style="color: #d0d0d0">}</span>
+
+        <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">pauseGame()</span>
+        <span style="color: #d0d0d0">{</span>
+        <span style="color: #d0d0d0">example6_damage.pause();</span>
+        <span style="color: #d0d0d0">example6_regeneration.pause();</span>
+        <span style="color: #d0d0d0">}</span></pre></div>
+
         <p class="normalSize textCenter mt10">Now, let's talk more about the finite loops.</p>
     </section>
     <section>
@@ -142,7 +149,7 @@
         <p class="normalSize textCenter mt10">The last parameter set if you pause the loop before executing or not.</p>
     </section>
 
-<script src="crono.min.js"></script>
+<script src="crono.minx.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
