@@ -1,23 +1,20 @@
-function hello()
-{
-  console.log('helloooooo');
-}
-
-let clickTimes = 0;
+let example1;
 
 function ouchAnimation()
 {
-  let ouch = document.querySelector("#ouch");
-  ouch.innerHTML = "OUCH!!!";
-  example1 = new Crono(returnNormal, 1000, 1);
+    let ouch = document.querySelector("#ouch");
+    ouch.innerHTML = "OUCH!!!";
+    example1 = new Crono(returnNormal, 1000, 1);
 }
 
 function returnNormal()
 {
-  console.log("called");
   let ouch = document.querySelector("#ouch");
   ouch.innerHTML = "Click Me!";
 }
+
+let clickTimes = 0;
+let example2 = new Crono(clickCounter, 3000, "clickCounter");
 
 function clickCounter()
 {
@@ -28,6 +25,18 @@ function clickCounter()
     clickButton.innerHTML = "Button times pressed every 3 seconds: " + clickTimes;
   }
 }
+
+let example3 = new Crono(clockSimulation, 1000, 0);
+
+let seconds = 0;
+function clockSimulation()
+{
+  seconds++;
+  let clockButton = document.querySelector("#clockButton");
+  clockButton.innerHTML = "Seconds you passed on this website page: " + seconds;
+}
+
+let example4 = new Crono(castMagic, 2000, "castMagic");
 
 let magicPoints = 10;
 let magicButton = document.querySelector("#magicButton");
@@ -48,14 +57,8 @@ function castMagic()
   }
 }
 
-let seconds = 0;
 let secondsExtra = 0;
-function clockSimulation()
-{
-  seconds++;
-  let clockButton = document.querySelector("#clockButton");
-  clockButton.innerHTML = "Seconds you passed on this website page: " + seconds;
-}
+let example5 = new Crono(clockSimulation2, 1000, 0, true);
 
 function clockSimulation2()
 {
@@ -77,7 +80,7 @@ let example6_button = document.querySelector("#swordGame");
 
 function regenerationSpell()
 {
-  if(hitPoints < hitPointsMax || isAlive == true)
+  if(hitPoints < hitPointsMax && isAlive == true)
   {
     hitPoints += regenerationPoints;
     if(hitPoints > hitPointsMax)
@@ -112,6 +115,7 @@ function pauseGame()
 let countArray = ["one!", "two!", "three!"];
 let countButton = document.querySelector("#countButton");
 let countValue = 0;
+let example7 = new Crono(counting, 2000, 3);
 
 function counting()
 {
@@ -128,6 +132,7 @@ function restartCounting()
 
 let money = 0;
 let moneyButton = document.querySelector("#moneyButton");
+let example8 = new Crono(moneyCollected, 500, 0, false, true);
 
 function moneyCollected()
 {
@@ -141,10 +146,4 @@ function pauseLoop()
   example8.pause();
 }
 
-let example1;
-let example2 = new Crono(clickCounter, 3000, "clickCounter");
-let example3 = new Crono(clockSimulation, 1000, 0);
-let example4 = new Crono(castMagic, 2000, "castMagic");
-let example5 = new Crono(clockSimulation2, 1000, 0, true);
-let example7 = new Crono(counting, 2000, 3);
-let example8 = new Crono(moneyCollected, 500, 0, false, true);
+
